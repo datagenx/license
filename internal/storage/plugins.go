@@ -5,9 +5,10 @@ import (
 	"log"
 	"os"
 
-	"github.com/datagenx/license-generator/internal/generate"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
+
+	"github.com/datagenx/license-generator/internal/generate"
 )
 
 type Storage interface {

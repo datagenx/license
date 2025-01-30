@@ -2,22 +2,22 @@ package main
 
 import (
 	"net/http"
-	"os"
 	"runtime"
 	"strings"
 
-	"github.com/datagenx/license-generator/api/controllers"
-	"github.com/datagenx/license-generator/internal/initializers"
 	"github.com/gin-gonic/gin"
+
+	"github.com/datagenx/license-generator/controllers"
+	"github.com/datagenx/license-generator/internal/initializers"
 )
 
 func main() {
 
 	// initilization
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	initializers.LoadEnvVar()
+	st := initializers.Setup()
 
-	if strings.ToUpper(os.Getenv("ENV_TYPE")) == "PROD" {
+	if strings.ToUpper(st.Env) == "PROD" {
 		gin.SetMode(gin.ReleaseMode)
 	}
 	//

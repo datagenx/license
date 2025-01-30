@@ -1,6 +1,8 @@
 module github.com/datagenx/license-generator
 
-go 1.20
+go 1.21.0
+
+toolchain go1.21.3
 
 require (
 	github.com/datagenx/license-validator v0.0.0-20230828142756-5d6c5ab8d2a0
@@ -11,6 +13,7 @@ require (
 )
 
 require (
+	github.com/alecthomas/kong v0.8.1 // indirect
 	github.com/bytedance/sonic v1.9.1 // indirect
 	github.com/chenzhuoyu/base64x v0.0.0-20221115062448-fe3a3abad311 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.2 // indirect

@@ -3,9 +3,10 @@ package controllers
 import (
 	"net/http"
 
+	"github.com/gin-gonic/gin"
+
 	"github.com/datagenx/license-generator/internal/generate"
 	"github.com/datagenx/license-generator/internal/storage"
-	"github.com/gin-gonic/gin"
 )
 
 func PostGenerate(ctx *gin.Context) {

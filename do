@@ -80,7 +80,7 @@ go-mod-tidy() {
 
 help_run="Run 'application'"
 run() {
-    go run api/main.go
+    CONFIG_FILE=env.conf go run api.go
 }
 
 install-go-bin() {
@@ -121,6 +121,11 @@ create-stub-test-files() {
         tr '\n' '\000' |
         xargs -0 -n 2 \
             sh -c '[ "$0" = "sh" ] && exit 0; echo "package $0" > "$1/pkg_test.go"'
+}
+
+help_up="Start the application via docker compose" 
+up() {
+    docker-compose up
 }
 
 help_version="Print version"
@@ -225,10 +230,6 @@ EOF
 
 list() {
     declare -F | awk '{print $3}'
-}
-
-docker-compose-up() {
-    docker-compose up
 }
 
 # This variable is used, but shellcheck can't tell.
